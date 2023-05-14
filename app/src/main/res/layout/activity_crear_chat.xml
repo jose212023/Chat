@@ -4,28 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".crearChat.CrearChat">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@drawable/icon_add"
-        android:id="@+id/btnagregar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        app:fabSize="normal"
-        android:layout_margin="10dp"/>
+        android:id="@+id/txtBuscar"
+        android:textSize="20dp"
+        android:hint="Buscar Usuarios"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_viewChats"
+        android:id="@+id/recycler_viewUsuarios"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:clipToPadding="false"
         android:padding="4dp"
         android:scrollbars="vertical"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:layout_below="@+id/txtBuscar">
 
     </androidx.recyclerview.widget.RecyclerView>
 
