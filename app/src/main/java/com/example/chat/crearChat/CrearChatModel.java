@@ -9,13 +9,16 @@ import com.example.chat.main.MainModel;
 
 public class CrearChatModel implements Parcelable {
     private String nombreContacto;
+    private String idUsuario;
 
-    public CrearChatModel(String nombreContacto){
+    public CrearChatModel(String nombreContacto, String idUsuario){
         this.nombreContacto = nombreContacto;
+        this.idUsuario = idUsuario;
     }
 
     protected CrearChatModel(Parcel in) {
         nombreContacto = in.readString();
+        idUsuario = in.readString();
     }
 
     public static final Parcelable.Creator<CrearChatModel> CREATOR = new Parcelable.Creator<CrearChatModel>() {
@@ -38,9 +41,14 @@ public class CrearChatModel implements Parcelable {
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int i) {
         parcel.writeString(nombreContacto);
+        parcel.writeString(idUsuario);
     }
 
     public String getNombre() {
         return nombreContacto;
+    }
+
+    public String getIdUsuario() {
+        return idUsuario;
     }
 }
