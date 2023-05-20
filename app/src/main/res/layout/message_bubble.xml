@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_background_chat"
+    android:layout_margin="8dp"
+    android:padding="8dp">
+
+    <!-- Contenedor para los mensajes recibidos -->
+    <LinearLayout
+        android:id="@+id/msgContainerReceived"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="start|left"
+        android:orientation="vertical">
+
+        <!-- Elementos del mensaje recibido -->
+        <!-- Aquí puedes personalizar cómo se ve el mensaje recibido -->
+
+        <TextView
+            android:id="@+id/txtMessageReceived"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <!-- Contenedor para los mensajes enviados -->
+    <LinearLayout
+        android:id="@+id/msgContainerSent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end|right"
+        android:orientation="vertical">
+
+        <!-- Elementos del mensaje enviado -->
+        <!-- Aquí puedes personalizar cómo se ve el mensaje enviado -->
+
+        <TextView
+            android:id="@+id/txtMessageSent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+</LinearLayout>

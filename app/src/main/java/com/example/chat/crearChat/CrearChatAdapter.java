@@ -30,6 +30,14 @@ public class CrearChatAdapter extends RecyclerView.Adapter<CrearChatAdapter.View
     @Override
     public void onBindViewHolder(@NonNull CrearChatAdapter.ViewHolder holder, int position) {
         holder.nombre.setText(crearChatModelList.get(position).getNombre());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mListener != null) {
+                    mListener.onItemClick(position);
+                }
+            }
+        });
     }
     @Override
     public int getItemCount() {
@@ -42,5 +50,16 @@ public class CrearChatAdapter extends RecyclerView.Adapter<CrearChatAdapter.View
             super(v);
             nombre = (TextView) v.findViewById(R.id.txtUsuarios);
         }
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    // Dentro de la clase CrearChatAdapter
+    private OnItemClickListener mListener;
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
     }
 }
